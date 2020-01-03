@@ -1,0 +1,28 @@
+---
+layout: post
+title:  "상단바 메뉴 추가하기"
+date:   2019-12-23 11:54:15 +0900
+categories: github-blog
+permalink: '/github-blog/pages-add'
+---
+
+1. 프로젝트 폴더 내에 page에 해당하는 .markdown 파일 또는 .html 파일을 생성합니다 
+
+2. 파일 상단에는 다음 정보를 기입해줍니다. 
+
+```html
+---
+<!-- layout: page -->
+layout: page
+<!-- 상단에 표시될 제목 -->
+title: Category
+<!-- 클릭 시 연결되는 링크 주소 -->
+permalink: /categorylist/
+---
+```
+
+---
+
+### Reference
+
+- <a href="https://devinlife.com/howto%20github%20pages/blog-config/#9-_posts-_pages-%EA%B8%B0%EB%B3%B8-%EC%84%A4%EC%A0%95"> 참고사이트 </a>

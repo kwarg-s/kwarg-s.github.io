@@ -1,0 +1,40 @@
+---
+layout: post
+title:  "Disqus 추가하기"
+date:   2019-12-18 12:07:15 +0900
+comments: true
+categories: github-blog
+permalink: '/github-blog/disqus'
+
+---
+
+---
+
+### 1. disqus_comments.html 추가하기
+
+- _includes/에 disqus_comments.html을 추가한다.
+
+    - <a href="https://raw.githubusercontent.com/indigo218/indigo218.github.io/master/_includes/disqus_comments.html">_includes/disqus_comments.html</a>
+
+---
+
+### 2. home, page, post.html 추가하기
+
+- _layouts/에 home.html, page.html, post.html을 추가한다. 
+
+    - <a href="https://raw.githubusercontent.com/indigo218/indigo218.github.io/master/_layouts/home.html">_layouts/home.html</a>
+
+
+    - <a href="https://raw.githubusercontent.com/indigo218/indigo218.github.io/master/_layouts/page.html">_layouts/page.html</a>
+
+
+
+    - <a href="https://raw.githubusercontent.com/indigo218/indigo218.github.io/master/_layouts/post.html">_layouts/post.html</a>
+
+---
+
+
+
+### Reference 
+
+- <a href="https://17billion.github.io/jekyll/disqus/reply/2017/06/01/jekyll_disqus.html"> 참고사이트(17billion.github.io) </a>
