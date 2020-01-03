@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Disqus 추가하기"
+title:  "포스트에 댓글란 추가하기"
 date:   2019-12-18 12:07:15 +0900
 comments: true
 categories: github-blog
@@ -10,26 +10,52 @@ permalink: '/github-blog/disqus'
 
 ---
 
-### 1. disqus_comments.html 추가하기
+### 1. Disqus에 가입하고 코드를 생성해야합니다
 
-- _includes/에 disqus_comments.html을 추가한다.
+- <a href="https://disqus.com/">Disqus 사이트</a>에 접속해주세요
+- ``GET START``를 선택해주세요
+- ``I want to install Disqus on my site``를 클릭합니다
+- ``Website Name``을 지정해야 합니다.
 
-    - <a href="https://raw.githubusercontent.com/indigo218/indigo218.github.io/master/_includes/disqus_comments.html">_includes/disqus_comments.html</a>
+<img src="../assets/img/disqus1.png">
+
+- Plan은 ``Basic``을 선택하면 됩니다.
+
+<img src="../assets/img/disqus2.png">
+
+- 맞는 플랫폼을 선택합니다. 저는 ``Jekyll``을 사용하였습니다.
 
 ---
 
-### 2. home, page, post.html 추가하기
+### 2. disqus_comments.html 파일을 추가해주세요
 
-- _layouts/에 home.html, page.html, post.html을 추가한다. 
+- _includes/에 disqus_comments.html을 추가해주세요. 
+- 아래 링크에 있는 코드를 복사한 다음
+    - <a href="https://raw.githubusercontent.com/floating218/floating218.github.io/master/_includes/disqus_comments.html">_includes/disqus_comments.html</a>
 
-    - <a href="https://raw.githubusercontent.com/indigo218/indigo218.github.io/master/_layouts/home.html">_layouts/home.html</a>
+- 이 파일에서 ``s.src``부분만 수정해 주세요. s.src는 1번 단계에서 ``Website Name``에 지정한 웹 사이트 이름을 넣어주시면 됩니다. 다만, ``myid.github.io``로 정한 경우, ``myid_github_io``로 넣으셔야 합니다.
+
+```
+s.src = 'https://' +위에서 정한 웹사이트 이름+ '.disqus.com/embed.js';
+```
 
 
-    - <a href="https://raw.githubusercontent.com/indigo218/indigo218.github.io/master/_layouts/page.html">_layouts/page.html</a>
+---
+
+### 3. home, page, post.html 파일을 추가해주세요
+
+
+- <a href="https://raw.githubusercontent.com/indigo218/indigo218.github.io/master/_layouts/home.html">_layouts/home.html</a>
+    - 중간에 웹사이트이름과 깃허브 사이트 링크는 본인의 것으로 변경해주세요.
+
+- <a href="https://raw.githubusercontent.com/indigo218/indigo218.github.io/master/_layouts/page.html">_layouts/page.html</a>
+    - 수정할 필요 없습니다.
+
+- <a href="https://raw.githubusercontent.com/indigo218/indigo218.github.io/master/_layouts/post.html">_layouts/post.html</a>
+    - ``s.src``부분을 disqus_comments.html에서처럼 수정해 주세요.
 
 
 
-    - <a href="https://raw.githubusercontent.com/indigo218/indigo218.github.io/master/_layouts/post.html">_layouts/post.html</a>
 
 ---
 

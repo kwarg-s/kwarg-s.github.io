@@ -6,20 +6,35 @@ categories: github-blog
 permalink: '/github-blog/pages-add'
 ---
 
-1. 프로젝트 폴더 내에 page에 해당하는 .markdown 파일 또는 .html 파일을 생성합니다 
+---
 
-2. 파일 상단에는 다음 정보를 기입해줍니다. 
+### 파일 추가하기
+
+- 프로젝트 폴더 내에 page에 해당하는 .markdown 파일 또는 .html 파일을 생성합니다 (파일이름이 ABC 순서대로 메뉴바에 나타나게 됩니다.)
+<br>
+<style>
+    img{
+        width:300px;
+    }
+</style>
+<img src="../assets/img/page_add.png">
+
+
+- 추가한 파일 상단에는 다음 정보를 기입해줍니다.
 
 ```html
----
 <!-- layout: page -->
 layout: page
 <!-- 상단에 표시될 제목 -->
 title: Category
 <!-- 클릭 시 연결되는 링크 주소 -->
 permalink: /categorylist/
----
 ```
+
+
+
+- 메뉴 제목이 ```Category```가 추가된 것을 확인할 수 있으며 클릭시 ```주소/categorylist/```로 연결됩니다.
+
 
 ---
 
