@@ -25,7 +25,9 @@ permalink: '/github-blog/disqus'
 
 - 맞는 플랫폼을 선택합니다. 저는 ``Jekyll``을 사용하였습니다.
 
----
+<img src="../assets/img/disqus3.png">
+
+
 
 ### 2. disqus_comments.html 파일을 추가해주세요
 
@@ -39,8 +41,6 @@ permalink: '/github-blog/disqus'
 s.src = 'https://' +위에서 정한 웹사이트 이름+ '.disqus.com/embed.js';
 ```
 
-
----
 
 ### 3. home, page, post.html 파일을 추가해주세요
 
