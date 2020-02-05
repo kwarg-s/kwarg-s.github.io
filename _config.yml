@@ -89,5 +89,5 @@ defaults:
       share: true
       related: true
 
-category_list: [github-blog]
+category_list: [github-blog,spark]
 
