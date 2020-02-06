@@ -6,7 +6,7 @@ categories: spark
 permalink: '/spark/cluster-spark'
 ---
 
---- 
+
 ## Apache Hadoop 프로젝트란
 
 ### 빅데이터와 하둡의 역사

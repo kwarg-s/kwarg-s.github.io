@@ -8,7 +8,6 @@ permalink: '/github-blog/create-blog'
 
 ---
 
----
 
 ### 1. Github에 사이트에 가입하고 repository를 생성해주세요
 
