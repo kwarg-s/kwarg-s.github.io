@@ -40,9 +40,6 @@ $gem install jekyll bundler
 ```bash
 $git clone https://github.com/mmistakes/minimal-mistakes.git
 ```
-
----
-
 ### 3. 내 로컬 폴더에 git 연동하기
 
 - 로컬 폴더 위치에서 console창을 켜서 다음을 실행해주면, 내 폴더는 방금 만든 repository와 연동이 됩니다.
@@ -58,11 +55,31 @@ $git push origin master
 ```
 - ``http://내id.github.io``에 접속해서 내 블로그가 뜨는지 확인해봅니다.
 
-
----
-
-
+### 3. 로컬에서 블로그 수정하기
+- 매번 github에 코드를 push해서 내 블로그를 확인하는 건 되게 번거로운 일인데요, 로컬에서 실시간으로 수정 상황을 확인하고 나서 push하는 것이 편합니다. 실시간으로 수정 상황은 ``$jekyll server``명령어를 통해 가능해요.
+- git폴더 안에서 아까 jekyll을 설치했었죠
+```bash
+$gem install jekyll bundler
+```
+- 그런데 여기서 ``$jekyll serve``를 실행했을 때 다음과 같은 에러 메시지가 뜰 수 있습니다.
+> Could not find public_suffix-4.0.1 in any of the sources (Bundler::GemNotFound)
+- 이 경우에는 다음과 같이 설치를 해줘야합니다.
+```bash
+$gem install public_suffix --version 4.0.1
+$bundle update
+```
+- ``$jekyll -v``을 통해 jekyll이 제대로 설치되었는지 확인해봅시다.
+```bash
+$jekyll -v
+```
+> jekyll 4.0.0
+- 그럼 이제 ``$jekyll serve``를 실행시키면 로컬 주소 ``127.0.0.1:4000``에서 나의 블로그의 수정 상황을 실시간으로 확인할 수 있습니다. 
+```bash
+$jekyll serve
+```
+> Server address: http://127.0.0.1:4000/ 
+> Server running... press ctrl-c to stop.
 
 ### Reference 
-
-- Null
+- https://17billion.github.io/jekyll/install/2017/05/27/install-a-jekyll.html
+- https://jekyllrb-ko.github.io/docs/windows/
