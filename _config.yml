@@ -22,7 +22,7 @@
 # https://imreplay.com/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/
 
 
-title: 둥둥이의 블로그
+title: 둥둥
 email: indigo218@snu.ac.kr
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -89,5 +89,5 @@ defaults:
       share: true
       related: true
 
-category_list: [github-blog,spark]
+category_list: [github-blog,spark,os]
 

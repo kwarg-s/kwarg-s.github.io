@@ -59,9 +59,6 @@ permalink: "/categorylist"
 </div>
 ```
 
-
----
-
 ### 2. 포스팅시
 
 - _posts/markdown 파일에서 상단에 필요한 정보를 기입해주세요 (categories, permalink) 
