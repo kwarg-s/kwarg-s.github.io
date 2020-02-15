@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "스파크 아키텍쳐"
+title:  "스파크(2) : 스파크 아키텍쳐"
 date:   2020-01-16 16:36:15 +0900
 categories: spark
 permalink: '/spark/archi-spark'

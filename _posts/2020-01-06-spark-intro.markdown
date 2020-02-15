@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "아파치 하둡 소개"
+title:  "스파크(1) : 아파치 하둡 소개"
 date:   2020-01-06 13:36:15 +0900
 categories: spark
 permalink: '/spark/hadoop'

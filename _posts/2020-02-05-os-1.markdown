@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "운영체제"
+title:  "운영체제(1) : 운영체제 역사"
 date:   2020-02-05 13:36:15 +0900
 categories: os
 permalink: '/os/operating-system'

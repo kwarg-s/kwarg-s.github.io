@@ -35,7 +35,7 @@ layout: default
 
   <header class="post-header">
     <center><h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1></center>
-    <center>{{ page.date | escape }} </center>
+    <center>{{ page.date | date: "%b %-d, %Y" }}  </center>
 
    </header>
 
