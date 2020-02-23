@@ -3,15 +3,13 @@ title : "운영체제(1) : 운영체제 역사"
 category :
   - os
 tag :
-  - me
-  - diary
-  - subinium
+  - os
 use_math : true
 author_profile : true
 header:
-  teaser : /assets/images/category/subin.jpg
-  overlay_image : /assets/images/category/subin.jpg
-  overlay_filter: 0.5
+  teaser : /assets/images/category/os.jpg
+  overlay_image : /assets/images/category/os.jpg
+  overlay_filter: 0.2
 ---
 
 

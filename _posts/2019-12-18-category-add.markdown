@@ -3,9 +3,8 @@ title : "깃허브 블로그 (2) : 카테고리 추가하기"
 category :
   - github-blog
 tag :
-  - me
-  - diary
-  - subinium
+  - github
+  - blog
 use_math : true
 author_profile : true
 header:

@@ -1,16 +1,14 @@
 ---
 title : "운영체제(4) : 스케줄링 알고리즘"
 category :
-  - subinium
+  - os
 tag :
-  - me
-  - diary
-  - subinium
+  - os
 use_math : true
 author_profile : true
 header:
-  teaser : /assets/images/category/subin.jpg
-  overlay_image : /assets/images/category/subin.jpg
+  teaser : /assets/images/category/os.jpg
+  overlay_image : /assets/images/category/os.jpg
   overlay_filter: 0.1
 ---
 

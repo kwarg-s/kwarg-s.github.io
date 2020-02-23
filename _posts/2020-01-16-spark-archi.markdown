@@ -3,9 +3,7 @@ title : "스파크(2) : 스파크 아키텍쳐"
 category :
   - spark
 tag :
-  - me
-  - diary
-  - subinium
+  - spark
 use_math : true
 author_profile : true
 header:

@@ -3,9 +3,7 @@ title : "스파크(4) : SparkSession"
 category :
   - spark
 tag :
-  - me
-  - diary
-  - subinium
+  - spark
 use_math : true
 author_profile : true
 header:

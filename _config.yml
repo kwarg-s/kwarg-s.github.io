@@ -84,7 +84,7 @@ facebook:
   username: 
   app_id:
   publisher:
-og_image: "/assets/images/mac_asb.jpg"
+og_image: "/assets/images/tiger.jpg"
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
@@ -103,7 +103,7 @@ analytics:
 # Site Author
 author:
   name: "둥둥"
-  avatar: "/assets/images/mac_asb.jpg"
+  avatar: "/assets/images/tiger.jpg"
   bio: "둥둥"
   location: "Seoul,Korea"
   email: "indigo218@snu.ac.kr"

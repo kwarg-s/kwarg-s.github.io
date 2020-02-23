@@ -3,9 +3,7 @@ title : "스파크(3) : PySpark 설치"
 category :
   - spark
 tag :
-  - me
-  - diary
-  - subinium
+  - spark
 use_math : true
 author_profile : true
 header:

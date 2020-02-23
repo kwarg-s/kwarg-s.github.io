@@ -9,8 +9,8 @@ tag :
 use_math : true
 author_profile : true
 header:
-  teaser : /assets/images/category/subin.jpg
-  overlay_image : /assets/images/category/subin.jpg
+  teaser : /assets/images/category/os.jpg
+  overlay_image : /assets/images/category/os.jpg
   overlay_filter: 0.1
 
 ---
