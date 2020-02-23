@@ -1,11 +1,17 @@
 ---
-layout: post
-title:  "깃허브 블로그 생성하기"
-date:   2019-12-17 14:07:15 +0900
-comments: true
-categories: github-blog
-permalink: '/github-blog/create-blog'
-
+title : "깃허브 블로그 (1) : 깃허브 블로그 생성하기"
+category :
+  - github-blog
+tag :
+  - me
+  - diary
+  - subinium
+use_math : true
+author_profile : true
+header:
+  teaser : /assets/images/category/subin.jpg
+  overlay_image : /assets/images/category/subin.jpg
+  overlay_filter: 0.1
 ---
 
 

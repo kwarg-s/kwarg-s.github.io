@@ -1,9 +1,17 @@
 ---
-layout: post
-title:  "스파크(1) : 아파치 하둡 소개"
-date:   2020-01-06 13:36:15 +0900
-categories: spark
-permalink: '/spark/hadoop'
+title : "스파크(1) : 아파치 하둡 소개"
+category :
+  - spark
+tag :
+  - me
+  - diary
+  - subinium
+use_math : true
+author_profile : true
+header:
+  teaser : /assets/images/category/data.jpg
+  overlay_image : /assets/images/category/data.jpg
+  overlay_filter: 0.1
 ---
 
 ![hadoopeco](../assets/img/spark/hadoopeco.png) 

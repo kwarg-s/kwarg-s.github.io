@@ -1,10 +1,17 @@
 ---
-layout: post
-title:  "운영체제(2) : 운영체제 구조"
-date:   2020-02-10 13:36:15 +0900
-categories: os
-permalink: '/os/operating-archi'
-shortdate: 2020-02-10 
+title : "운영체제(2) : 운영체제 구조"
+category :
+  - os
+tag :
+  - me
+  - diary
+  - subinium
+use_math : true
+author_profile : true
+header:
+  teaser : /assets/images/category/subin.jpg
+  overlay_image : /assets/images/category/subin.jpg
+  overlay_filter: 0.1
 ---
 
 

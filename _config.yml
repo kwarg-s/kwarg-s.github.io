@@ -1,93 +1,299 @@
 # Welcome to Jekyll!
 #
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
+# This config file is meant for settings that affect your entire site, values
+# which you are expected to set up once and rarely need to edit after that.
 # For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+# `jekyll serve`. If you change this file, please restart the server process.
+
+# Theme Settings
 #
-# If you need help with YAML syntax, here are some quick references for you: 
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+# Review documentation to determine if you should use `theme` or `remote_theme`
+# https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
-#http://jihyeleee.com/blog/third-designer-can-make-jekyll-blog/
-# https://imreplay.com/blogging/minimal-mistakes-%ED%85%8C%EB%A7%88%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-githubio-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/
+# theme                  : "minimal-mistakes-jekyll"
+remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
-
-title: 둥둥
-email: indigo218@snu.ac.kr
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: #
-github_username:  floating218
-
-# Build settings
-theme: minima
-plugins:
-  - jekyll-feed
-
-#참고: https://junhobaik.github.io/jekyll-apply-theme/
-# author: 
-#   name             : "이름"
-#   avatar           : # 프로필 사진
-#   bio              : "이름 아래 나타날 자신의 설명"
-#   location         : "Seoul,Korea"
-#   email            : "a@b.c"
-#   uri              : # 웹사이트, 보통 지금 블로그 말고 링크해두고 싶은 사이트를 적는다.
-#   # 이 아래 쇼셜 리스트에 해당되는 것에 아이디를 적는다
-#   github : "indigo218" # 주소 전체를 적는 것이 아닌 자신의 정보만 적는다.
-
-
-
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
-
+# Site Settings
+locale: "en"
+title: "둥둥"
+title_separator: "-"
+name: "둥둥"
+description: "둥둥 블로그"
+url: "https://floating218.github.io"
+logo: "/assets/images/logo3.png"
+masthead_title: "둥둥"
+baseurl: # the subpath of your site, e.g. "/blog"
+repository: "floating218/floating218.github.io"
+teaser: "/assets/images/sbnu.png"
+# breadcrumbs            : false # true, false (default)
+words_per_minute: 200
 comments:
-  provider               : "disqus"
+  provider: "disqus"
   disqus:
-    shortname            : floating218-github-io # Short-name
+    shortname: floating218-github-io
+  discourse:
+    server: # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
+  facebook:
+    # https://developers.facebook.com/docs/plugins/comments
+    appid:
+    num_posts: # 5 (default)
+    colorscheme: # "light" (default), "dark"
+staticman:
+  allowedFields: # ['name', 'email', 'url', 'message']
+  branch: # "master"
+  commitMessage: # "New comment."
+  filename: # comment-{@timestamp}
+  format: # "yml"
+  moderation: # true
+  path: # "/_data/comments/{options.slug}" (default)
+  requiredFields: # ['name', 'email', 'message']
+  transforms:
+    email: # "md5"
+  generatedFields:
+    date:
+      type: "date"
+      options:
+        format: "iso8601" # (default), "timestamp-seconds", "timestamp-milliseconds"
+reCaptcha:
+  siteKey:
+  secret:
+atom_feed:
+  path: # blank (default) uses feed.xml
+search: true
+search_full_content: true
+search_provider: # lunr (default), algolia, google
+algolia:
+  application_id: # YOUR_APPLICATION_ID
+  index_name: # YOUR_INDEX_NAME
+  search_only_api_key: # YOUR_SEARCH_ONLY_API_KEY
+  powered_by: # true (default), false
+google:
+  search_engine_id: # YOUR_SEARCH_ENGINE_ID
+  instant_search: # false (default), true
+# SEO Related
+google_site_verification:
+bing_site_verification:
+yandex_site_verification:
+naver_site_verification:
 
+# Social Sharing
+twitter:
+  sername:
+facebook:
+  username: 
+  app_id:
+  publisher:
+og_image: "/assets/images/mac_asb.jpg"
+# For specifying social profiles
+# - https://developers.google.com/structured-data/customize/social-profiles
+social:
+  type: # Person or Organization (defaults to Person)
+  name: # If the user or organization name differs from the site's name
+  links: # An array of links to social media profiles
+    - "#"
+
+# Analytics
+analytics:
+  provider: "google" # false (default), "google", "google-universal", "custom"
+  google:
+    tracking_id: "UA-121853166-1"
+    anonymize_ip: # true, false (default)
+
+# Site Author
+author:
+  name: "둥둥"
+  avatar: "/assets/images/mac_asb.jpg"
+  bio: "둥둥"
+  location: "Seoul,Korea"
+  email: "indigo218@snu.ac.kr"
+  uri:
+  home: '#' # null (default), "absolute or relative url to link to author home"
+  bitbucket:
+  codepen:
+  dribbble:
+  flickr:
+  facebook: 
+  foursquare:
+  github: "floating218"
+  gitlab:
+  google_plus:
+  keybase:
+  instagram:
+  lastfm:
+  linkedin: 
+  pinterest:
+  soundcloud:
+  stackoverflow: # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
+  steam:
+  tumblr:
+  twitter:
+  vine:
+  weibo:
+  xing:
+  youtube: 
+
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - vendora
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/plugins
+  - assets/js/_main.js
+  - assets/js/vendor
+  - Capfile
+  - CHANGELOG
+  - config
+  - Gemfile
+  - Gruntfile.js
+  - gulpfile.js
+  - LICENSE
+  - log
+  - node_modules
+  - package.json
+  - Rakefile
+  - README
+  - tmp
+  - /docs # ignore Minimal Mistakes /docs
+  - /test # ignore Minimal Mistakes /test
+keep_files:
+  - .git
+  - .svn
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+
+# Outputting
+permalink: /:title/
+paginate: 7 # amount of posts to show
+paginate_path: /page:num/
+timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+# Plugins (previously gems:)
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  #- jemoji
+  - jekyll-mermaid
+
+# mimic GitHub Pages with --safe
+whitelist:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  #- jemoji
+  - jekyll-mermaid
+
+# Archives
+#  Type
+#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
+#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
+#  Path (examples)
+#  - Archive page should exist at path when using Liquid method or you can
+#    expect broken links (especially with breadcrumbs enabled)
+#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
+#  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
+#  - <base_path/my-awesome-category/index.html ~> path: /
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+# https://github.com/jekyll/jekyll-archives
+# jekyll-archives:
+#   enabled:
+#     - categories
+#     - tags
+#   layouts:
+#     category: archive-taxonomy
+#     tag: archive-taxonomy
+#   permalinks:
+#     category: /categories/:name/
+#     tag: /tags/:name/
+
+# HTML Compression
+# - http://jch.penibelst.de/
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
+
+# Defaults
 defaults:
   # _posts
+
   - scope:
       path: ""
       type: posts
     values:
       layout: single
-      author_profile: true
-      read_time: true
-      comments: true # 댓글 활성화
+      author_profile: false
+      read_time: false
+      comments: true
       share: true
       related: true
+      toc: true
+      toc-sticky: true
+  # _posts
 
-category_list: [github-blog,spark,os]
+  - scope:
+      path: ""
+      type: pages
+    values:
+      comments: true
 
+# for Euler-Project diff variable
+diff:
+  - 5
+  - 10
+  - 15
+  - 20
+  - 25
+  - 30
+  - 35
+  - 40
+  - 45
+  - 50
+  - 55
+  - 60
+  - 65
+  - 70
+  - 75
+  - 80
+  - 85
+  - 90
+  - 95
+  - 100

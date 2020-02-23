@@ -1,11 +1,18 @@
 ---
-layout: post
-title:  "CSS/Font 추가하기"
-date:   2019-12-23 15:11:15 +0900
-categories: github-blog
-permalink: '/github-blog/design-add'
+title : "깃허브 블로그 (4) : CSS/Font 추가하기"
+category :
+  - github-blog
+tag :
+  - me
+  - diary
+  - subinium
+use_math : true
+author_profile : true
+header:
+  teaser : /assets/images/category/subin.jpg
+  overlay_image : /assets/images/category/subin.jpg
+  overlay_filter: 0.1
 ---
-
 
 
 ### 1. css/에 .css 파일을 추가합니다. 

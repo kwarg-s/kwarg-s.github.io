@@ -2,7 +2,7 @@
 layout: post
 title:  "Welcome to Jekyll"
 date:   2019-12-17 20:10:15 +0900
-categories: jekyll update
+categories: etc
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated. 당신은 이 포스트를 `_posts`라는 폴더 내에서 찾을 수 있다. 가서 그것을 편집하면 사이트를 스스로 변경할 수 있을 것이다. 당신은 다른 방식으로도 사이트를 변경할 수 있는데, 가장 흔한 방법은 `jekyll serve`를 실행해서 웹서버를 런칭한다음 새로고침해보는 것이다. 
 

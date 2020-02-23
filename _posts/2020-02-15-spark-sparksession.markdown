@@ -1,9 +1,17 @@
 ---
-layout: post
-title:  "스파크(4) : SparkSession"
-date:   2020-02-15 9:36:15 +0900
-categories: spark
-permalink: '/spark/spark-sparksession'
+title : "스파크(4) : SparkSession"
+category :
+  - spark
+tag :
+  - me
+  - diary
+  - subinium
+use_math : true
+author_profile : true
+header:
+  teaser : /assets/images/category/data.jpg
+  overlay_image : /assets/images/category/data.jpg
+  overlay_filter: 0.1
 ---
 
 ### **SparkContext? SparkSession?**

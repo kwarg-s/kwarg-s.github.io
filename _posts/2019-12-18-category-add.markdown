@@ -1,11 +1,18 @@
 ---
-layout: post
-title:  "카테고리 추가하기"
-date:   2019-12-18 12:08:15 +0900
-categories: github-blog
-permalink: '/github-blog/category-add'
+title : "깃허브 블로그 (2) : 카테고리 추가하기"
+category :
+  - github-blog
+tag :
+  - me
+  - diary
+  - subinium
+use_math : true
+author_profile : true
+header:
+  teaser : /assets/images/category/subin.jpg
+  overlay_image : /assets/images/category/subin.jpg
+  overlay_filter: 0.1
 ---
-
 
 
 

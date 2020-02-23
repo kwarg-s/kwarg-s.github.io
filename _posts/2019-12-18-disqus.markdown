@@ -1,11 +1,17 @@
 ---
-layout: post
-title:  "포스트에 댓글란 추가하기"
-date:   2019-12-18 12:07:15 +0900
-comments: true
-categories: github-blog
-permalink: '/github-blog/disqus'
-
+title : "깃허브 블로그 (3) : 포스트에 댓글란 추가하기"
+category :
+  - github-blog
+tag :
+  - me
+  - diary
+  - subinium
+use_math : true
+author_profile : true
+header:
+  teaser : /assets/images/category/subin.jpg
+  overlay_image : /assets/images/category/subin.jpg
+  overlay_filter: 0.1
 ---
 
 

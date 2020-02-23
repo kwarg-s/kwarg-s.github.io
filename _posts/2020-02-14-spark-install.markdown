@@ -1,16 +1,22 @@
 ---
-layout: post
-title:  "스파크(3) : PySpark 설치"
-date:   2020-02-14 16:36:15 +0900
-categories: spark
-permalink: '/spark/spark-install'
+title : "스파크(3) : PySpark 설치"
+category :
+  - spark
+tag :
+  - me
+  - diary
+  - subinium
+use_math : true
+author_profile : true
+header:
+  teaser : /assets/images/category/data.jpg
+  overlay_image : /assets/images/category/data.jpg
+  overlay_filter: 0.1
 ---
-https://www.tutorialspoint.com/pyspark/pyspark_broadcast_and_accumulator.htm
-
-<center><img src="../assets/img/spark/spark.png" style="width:300px;"></center>
-
 
 ### **아파치 스파크 (복습)**
+
+<center><img src="../assets/img/spark/spark.png" style="width:300px;"></center>
 
 아파치 스파크는 오픈소스 분산 쿼리 및 처리 엔진입니다. 빠르고, 실시간으로 processing(처리)을 가능하게 하는 프레임워크죠. 스파크가 등장하게 된 배경은, 기존의 아파치 하둡의 맵리듀스 프레임워크가 배치 프로세싱만 지원하였으며, 실시간 처리에 취약하였기 때문입니다. 스파크는 이러한 한계를 극복합니다.
 
@@ -60,3 +66,4 @@ $./bin/pyspark
 
 ### Reference
 - <a href="#"> 파이썬을 활용한 스파크 프로그래밍 - 제프리 에이븐 </a>
+- https://www.tutorialspoint.com/pyspark/pyspark_broadcast_and_accumulator.htm
