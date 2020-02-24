@@ -1,0 +1,89 @@
+I"�<h3 id="1-github에-사이트에-가입하고-repository를-생성해주세요">1. Github에 사이트에 가입하고 repository를 생성해주세요</h3>
+
+<ul>
+  <li><a href="https://github.com/">Github</a>에 로그인해주세요</li>
+  <li>
+    <p>우측 상단에서 <code class="highlighter-rouge">New repository</code>를 선택하여 새 repository를 만들어 줍시다.
+<br />
+<img src="../assets/img/create-blog1.png" style="width:300px" /></p>
+  </li>
+  <li><code class="highlighter-rouge">Repository name</code>은 반드시 <code class="highlighter-rouge">github아이디.github.io</code>로 지정하여야 하며, <code class="highlighter-rouge">Public</code>을 선택하여야 합니다.</li>
+</ul>
+
+<p><img src="../assets/img/create-blog2.png" style="width:800px" /></p>
+
+<hr />
+
+<h3 id="2-jekyll-테마-적용해보기">2. Jekyll 테마 적용해보기</h3>
+
+<ul>
+  <li>Jekyll 테마를 적용하기 위해서는 ruby를 설치해야 합니다.</li>
+  <li>윈도우 : <a href="http://rubyinstaller.org/downloads/">여기</a>에 접속해서 <code class="highlighter-rouge">Ruby+Devkit</code>을 설치합니다.</li>
+  <li>Jekyll과 Bundler를 설치합니다.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$gem</span> <span class="nb">install </span>jekyll bundler
+</code></pre></div>    </div>
+  </li>
+  <li>이제부터 Jekyll 테마를 적용해보겠습니다. <code class="highlighter-rouge">minimal-mistakes</code>라는 테마를 적용해볼건데요, 테마를 제공해주는 github 주소는 <a href="https://github.com/mmistakes/minimal-mistakes">이곳</a>입니다.</li>
+  <li>
+    <p><code class="highlighter-rouge">Clone or download</code>버튼을 눌러서 링크를 복사합니다.
+<img src="../assets/img/create-blog3.png" style="width:800px" /></p>
+  </li>
+  <li>로컬 폴더에 가서 <code class="highlighter-rouge">git clone 복사한 링크</code>를 실행하면 폴더에 테마의 코드가 복사됩니다.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$git</span> clone https://github.com/mmistakes/minimal-mistakes.git
+</code></pre></div>    </div>
+    <h3 id="3-내-로컬-폴더에-git-연동하기">3. 내 로컬 폴더에 git 연동하기</h3>
+  </li>
+  <li>로컬 폴더 위치에서 console창을 켜서 다음을 실행해주면, 내 폴더는 방금 만든 repository와 연동이 됩니다.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$git</span> init
+<span class="nv">$git</span> remote add origin https://github.com/내ID/내ID.github.io.git
+</code></pre></div>    </div>
+  </li>
+  <li>코드를 add, commit, push하면 github에 적용이 됩니다.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$git</span> add <span class="nb">.</span>
+<span class="nv">$git</span> commit <span class="nt">-m</span> <span class="s2">"first commit"</span>
+<span class="nv">$git</span> push origin master
+</code></pre></div>    </div>
+  </li>
+  <li><code class="highlighter-rouge">http://내id.github.io</code>에 접속해서 내 블로그가 뜨는지 확인해봅니다.</li>
+</ul>
+
+<h3 id="3-로컬에서-블로그-수정하기">3. 로컬에서 블로그 수정하기</h3>
+<ul>
+  <li>매번 github에 코드를 push해서 내 블로그를 확인하는 건 되게 번거로운 일인데요, 로컬에서 실시간으로 수정 상황을 확인하고 나서 push하는 것이 편합니다. 실시간으로 수정 상황은 <code class="highlighter-rouge">$jekyll server</code>명령어를 통해 가능해요.</li>
+  <li>git폴더 안에서 아까 jekyll을 설치했었죠
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$gem</span> <span class="nb">install </span>jekyll bundler
+</code></pre></div>    </div>
+  </li>
+  <li>그런데 여기서 <code class="highlighter-rouge">$jekyll serve</code>를 실행했을 때 다음과 같은 에러 메시지가 뜰 수 있습니다.
+    <blockquote>
+      <p>Could not find public_suffix-4.0.1 in any of the sources (Bundler::GemNotFound)</p>
+    </blockquote>
+  </li>
+  <li>이 경우에는 다음과 같이 설치를 해줘야합니다.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$gem</span> <span class="nb">install </span>public_suffix <span class="nt">--version</span> 4.0.1
+<span class="nv">$bundle</span> update
+</code></pre></div>    </div>
+  </li>
+  <li><code class="highlighter-rouge">$jekyll -v</code>을 통해 jekyll이 제대로 설치되었는지 확인해봅시다.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$jekyll</span> <span class="nt">-v</span>
+</code></pre></div>    </div>
+    <blockquote>
+      <p>jekyll 4.0.0</p>
+    </blockquote>
+  </li>
+  <li>그럼 이제 <code class="highlighter-rouge">$jekyll serve</code>를 실행시키면 로컬 주소 <code class="highlighter-rouge">127.0.0.1:4000</code>에서 나의 블로그의 수정 상황을 실시간으로 확인할 수 있습니다.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$jekyll</span> serve
+</code></pre></div>    </div>
+    <blockquote>
+      <p>Server address: http://127.0.0.1:4000/ 
+Server running… press ctrl-c to stop.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="reference">Reference</h3>
+<ul>
+  <li>https://17billion.github.io/jekyll/install/2017/05/27/install-a-jekyll.html</li>
+  <li>https://jekyllrb-ko.github.io/docs/windows/</li>
+</ul>
+:ET

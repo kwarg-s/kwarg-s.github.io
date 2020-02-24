@@ -1,5 +1,5 @@
 ---
-title : "스파크(3) : PySpark 설치"
+title : "스파크 (3) : PySpark 설치"
 category :
   - spark
 tag :

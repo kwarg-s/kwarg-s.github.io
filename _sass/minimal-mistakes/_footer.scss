@@ -2,6 +2,9 @@
    FOOTER
    ========================================================================== */
 
+
+
+
 .page__footer {
   @include clearfix;
   float: left;
@@ -16,11 +19,13 @@
   /* sticky footer fix end */
   margin-top: 3em;
   color: $dark-gray;
+  
   -webkit-animation: $intro-transition;
   animation: $intro-transition;
   -webkit-animation-delay: 0.45s;
   animation-delay: 0.45s;
   background-color: $footer-background-color;
+  background-color: #D9E5FF;
 
   footer {
     @include clearfix;

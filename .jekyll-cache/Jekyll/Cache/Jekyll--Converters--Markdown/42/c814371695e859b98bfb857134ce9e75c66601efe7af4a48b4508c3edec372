@@ -1,0 +1,38 @@
+I"�<h3 id="파일-추가하기">파일 추가하기</h3>
+
+<ul>
+  <li>프로젝트 폴더 내에 page에 해당하는 .markdown 파일 또는 .html 파일을 생성합니다 (파일이름이 ABC 순서대로 메뉴바에 나타나게 됩니다.)
+<br /></li>
+</ul>
+<style>
+    img{
+        width:300px;
+    }
+</style>
+
+<p><img src="../assets/img/page_add.png" /></p>
+
+<ul>
+  <li>추가한 파일 상단에는 다음 정보를 기입해줍니다.</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- layout: page --&gt;</span>
+layout: page
+<span class="c">&lt;!-- 상단에 표시될 제목 --&gt;</span>
+title: Category
+<span class="c">&lt;!-- 클릭 시 연결되는 링크 주소 --&gt;</span>
+permalink: /categorylist/
+</code></pre></div></div>
+
+<ul>
+  <li>메뉴 제목이 <code class="highlighter-rouge">Category</code>가 추가된 것을 확인할 수 있으며 클릭시 <code class="highlighter-rouge">주소/categorylist/</code>로 연결됩니다.</li>
+</ul>
+
+<hr />
+
+<h3 id="reference">Reference</h3>
+
+<ul>
+  <li><a href="https://devinlife.com/howto%20github%20pages/blog-config/#9-_posts-_pages-%EA%B8%B0%EB%B3%B8-%EC%84%A4%EC%A0%95"> 참고사이트 </a></li>
+</ul>
+:ET

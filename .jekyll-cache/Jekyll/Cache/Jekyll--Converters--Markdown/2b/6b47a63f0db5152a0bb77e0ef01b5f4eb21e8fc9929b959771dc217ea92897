@@ -1,0 +1,39 @@
+I"�<h3 id="1-css에-css-파일을-추가합니다">1. css/에 .css 파일을 추가합니다.</h3>
+
+<ul>
+  <li>css/style.css을 다음처럼 추가해주세요.</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* style.css */</span>
+<span class="nt">p</span><span class="o">,</span> <span class="nt">form</span> <span class="p">{</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="s2">'Nanum Gothic'</span><span class="p">,</span> <span class="nb">serif</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span><span class="m">20px</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="nc">.footer-text</span> <span class="p">{</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="s2">'Jeju Gothic'</span><span class="p">,</span> <span class="nb">serif</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">16px</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="2-_layouts에서-적용합니다">2. _layouts에서 적용합니다.</h3>
+
+<ul>
+  <li>_layouts/home.html에 적용해주면 됩니다.</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"../css/font-awesome.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://fonts.googleapis.com/earlyaccess/jejugothic.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://fonts.googleapis.com/earlyaccess/nanumgothic.css"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="reference">Reference</h3>
+
+<ul>
+  <li><a href="http://alex.devpools.kr/2017/03/16/jekyll%EB%A1%9C-github-page-%EB%A7%8C%EB%93%A4%EA%B8%B0/"> 참고사이트 </a></li>
+</ul>
+:ET

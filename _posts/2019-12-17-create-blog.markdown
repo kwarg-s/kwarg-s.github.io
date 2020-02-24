@@ -1,7 +1,7 @@
 ---
 title : "깃허브 블로그 (1) : 깃허브 블로그 생성하기"
 category :
-  - github-blog
+  - etc
 tag :
   - github
   - blog
@@ -14,7 +14,7 @@ header:
 ---
 
 
-### 1. Github에 사이트에 가입하고 repository를 생성해주세요
+## Github에 사이트에 가입하고 repository를 생성해주세요
 
 - <a href="https://github.com/">Github</a>에 로그인해주세요
 - 우측 상단에서 ``New repository``를 선택하여 새 repository를 만들어 줍시다.
@@ -27,9 +27,8 @@ header:
 
 <img src="../assets/img/create-blog2.png" style="width:800px">
 
----
 
-### 2. Jekyll 테마 적용해보기
+## Jekyll 테마 적용해보기  
 
 - Jekyll 테마를 적용하기 위해서는 ruby를 설치해야 합니다. 
 - 윈도우 : <a href="http://rubyinstaller.org/downloads/">여기</a>에 접속해서 ``Ruby+Devkit``을 설치합니다.
@@ -44,8 +43,9 @@ $gem install jekyll bundler
 - 로컬 폴더에 가서 ``git clone 복사한 링크``를 실행하면 폴더에 테마의 코드가 복사됩니다.
 ```bash
 $git clone https://github.com/mmistakes/minimal-mistakes.git
-```
-### 3. 내 로컬 폴더에 git 연동하기
+```  
+
+## 내 로컬 폴더에 git 연동하기  
 
 - 로컬 폴더 위치에서 console창을 켜서 다음을 실행해주면, 내 폴더는 방금 만든 repository와 연동이 됩니다.
 ```bash
@@ -58,9 +58,10 @@ $git add .
 $git commit -m "first commit"
 $git push origin master
 ```
-- ``http://내id.github.io``에 접속해서 내 블로그가 뜨는지 확인해봅니다.
+- ``http://내id.github.io``에 접속해서 내 블로그가 뜨는지 확인해봅니다.  
 
-### 3. 로컬에서 블로그 수정하기
+## 로컬에서 블로그 수정하기  
+
 - 매번 github에 코드를 push해서 내 블로그를 확인하는 건 되게 번거로운 일인데요, 로컬에서 실시간으로 수정 상황을 확인하고 나서 push하는 것이 편합니다. 실시간으로 수정 상황은 ``$jekyll server``명령어를 통해 가능해요.
 - git폴더 안에서 아까 jekyll을 설치했었죠
 ```bash
@@ -83,8 +84,38 @@ $jekyll -v
 $jekyll serve
 ```
 > Server address: http://127.0.0.1:4000/ 
-> Server running... press ctrl-c to stop.
+> Server running... press ctrl-c to stop.  
 
-### Reference 
+
+## Jekyll 폴더 구성  
+
+- <a href="http://jihyeleee.com/blog/third-designer-can-make-jekyll-blog/"> 참고 </a>
+
+
+- _config.hml
+  - 환경설정 정보
+
+
+- _drafts
+  - 아직 게시하지 않은 post를 보관
+
+
+- _includes
+  - 재사용하기 위한 html 파일
+
+
+- _layouts
+  - 형태를 정의해놓은 html 파일들
+
+
+- _data
+  - 블로그에 사용할 수 있는 데이터를 모아놓을 수 있는 폴더
+
+
+- _site
+  - 건드려서는 안되는 자동 변환 파일들  
+
+
+## Reference   
 - https://17billion.github.io/jekyll/install/2017/05/27/install-a-jekyll.html
 - https://jekyllrb-ko.github.io/docs/windows/

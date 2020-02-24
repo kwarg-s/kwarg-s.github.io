@@ -1,0 +1,127 @@
+I"�<p><strong>운영체제를 도서관으로 비유하면?</strong></p>
+
+<ul>
+  <li>운영체제는 도서관</li>
+  <li>응용 프로그램은 시민</li>
+  <li>하드웨어는 책</li>
+</ul>
+
+<p><strong>운영체제는 뭘 하나요?</strong></p>
+
+<ol>
+  <li>시민이 도서관에 책을 요청합니다.
+    <blockquote>
+      <p>응용프로그램이 운영체제에게 자원을 요청합니다.</p>
+    </blockquote>
+  </li>
+  <li>도서관은 책을 찾아서 시민에게 빌려줍니다.
+    <blockquote>
+      <p>운영체제는 자원을 찾아서 응용프로그램에게 빌려줍니다.</p>
+      <ul>
+        <li>메모리 허가,분배</li>
+        <li>cpu 시간 제공</li>
+        <li>io 장치 허가</li>
+      </ul>
+    </blockquote>
+  </li>
+  <li>시민이 책을 다 읽거나, 기한이 다 되면, 도서관이 책을 회수합니다.
+    <blockquote>
+      <p>운영체제가 자원을 회수합니다.</p>
+    </blockquote>
+  </li>
+</ol>
+
+<center> <img src="../assets/img/os/os1.png" /> </center>
+
+<ol>
+  <li>운영체제에게 자원을 요청하기 위해서는 요청서(시스템콜)가 필요합니다.</li>
+  <li>그런데 이 시스템콜을 직접 사용하기는 프로그래밍이 복잡합니다.</li>
+  <li>그래서 이 문제를 완화하기 위해 각 언어별로 운영체제 기능을 요청할 수 있는 인터페이스(=api)를 제공합니다. api 내부에는 시스템콜이 있습니다.</li>
+  <li>api,라이브러리를 기반으로 해서 application, shell등을 만듭니다.</li>
+  <li>사용자는 application, shell등을 사용합니다.</li>
+</ol>
+
+<p><strong>Shell</strong> : <strong>운영체제는 사용자 인터페이스를 제공합니다.</strong></p>
+
+<p>쉘(shell) 은  사용자가 운영체제 기능과 서비스를 조작할 수 있도록 인터페이스를 제공하는 응용 프로그램입니다. 쉘은 터미널 환경 CLI와 그래픽 환경 GUI로 분류합니다.</p>
+
+<p><strong>API</strong> : <strong>운영체제는 응용프로그램을 위해서 인터페이스를 제공합니다.</strong></p>
+
+<p>Application programming interface. api는 각 응용프로그램마다 함수로 제공됩니다. 보통은 이 함수들을 묶어서 라이브러리 형태로 제공합니다.</p>
+<ul>
+  <li>
+    <p>예를 들어 clibrary에서 printf()도 api의 함수라고 할 수 있습니다.</p>
+  </li>
+  <li>
+    <p>시민이 도서관에 책을 요청하기 위해서는 신청서를 작성해서 제출해야합니다.</p>
+    <blockquote>
+      <p>사용자 또는 응용프로그램이 자원을 요청하기 위해서는 api형태의 요청서를 제출하여야 합니다.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p><strong>시스템콜</strong>  : <strong>운영체제는 응용프로그램을 위해서 시스템콜을 제공합니다.</strong></p>
+
+<p>운영체제가 운영체제 각 기능을 사용할 수 있게하는 명령어 또는 함수를 제공하는데 이를 시스템콜이라고 합니다. api 내부에는 시스템콜을 호출하는 형태로 만들어집니다.</p>
+
+<p><strong>운영체제를 만드는 방법</strong></p>
+
+<ol>
+  <li>운영체제를 개발합니다. = kernel</li>
+  <li>시스템콜을 개발합니다.</li>
+  <li>c언어로 shell을 만들고 싶으면, c api(library)를 만들어야합니다.</li>
+  <li>c언어로 shell 프로그램을 만듭니다.</li>
+  <li>응용프로그램을 만듭니다.</li>
+</ol>
+
+<h2 id="운영체제와-시스템콜">운영체제와 시스템콜</h2>
+
+<p><strong>POSIX API</strong><br />
+표준적인 시스템콜을 정의하는 문서도 있습니다.</p>
+
+<p><strong>윈도우 API</strong>
+자기만의 규격입니다.</p>
+
+<p><strong>맥</strong>
+리눅스의 시스템콜과 유사합니다.</p>
+
+<h2 id="api와-시스템콜">API와 시스템콜</h2>
+
+<ul>
+  <li>시스템콜: 운영체제 기능을 호출하는 함수</li>
+  <li>API: 각 언어별 운영체제 기능 호출 인터페이스 함수 (각 언어별 인터페이스)</li>
+</ul>
+
+<h2 id="요약">요약</h2>
+
+<ul>
+  <li>운영체제는 하드웨어와 응용 프로그램을 관리합니다.</li>
+  <li>사용자 인터페이스를 제공하기 위해 쉘을 제공합니다.</li>
+  <li>응용프로그램이 운영체제 기능을 요청하기 위해서 그 기능으로 운영체제는 시스템 콜을 제공합니다.</li>
+  <li>시스템콜을 c언어로 직접 사용할수는 있습니다만, 직접 사용하는 대신 시스템콜을 이용해서 만든 언어별 라이브러리인 api를 사용합니다.</li>
+</ul>
+
+<h2 id="cpu의-권한-모드-cpu-protection-rings">CPU의 권한 모드, CPU protection rings</h2>
+
+<ul>
+  <li>user mode: 응용프로그램이 사용합니다.</li>
+  <li>kernel mode: OS가 사용합니다. 특권 명령어 실행 및 원하는 작업 수행을 위한 자원 접근이 가능한 모드입니다.</li>
+</ul>
+
+<p>인텔 cpu를 기준으로, 4가지 모드 (ring0, ring1, ring2, ring3)를 가지고 있습니다. 그리고 대부분 그 중에서 2가지만 사용합니다. ring0이 커널 모드, ring3이 user 모드입니다.</p>
+
+<p><strong>kernel이 뭐죠?</strong></p>
+<blockquote>
+  <p>사전적 번역은 알맹이, 핵심입니다. os가 cpu를 쓸때 사용하는 모드라고 할 수 있습니다.</p>
+</blockquote>
+
+<p><strong>shell이 뭐죠?</strong></p>
+<blockquote>
+  <p>사전적 번역은 껍데기입니다.</p>
+</blockquote>
+
+<h3 id="reference">Reference</h3>
+<ul>
+  <li><a href="http://www.fastcampus.co.kr">fast campus 강의</a></li>
+</ul>
+:ET

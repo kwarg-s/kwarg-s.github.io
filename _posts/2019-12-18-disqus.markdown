@@ -1,7 +1,7 @@
 ---
-title : "깃허브 블로그 (3) : 포스트에 댓글란 추가하기"
+title : "깃허브 블로그 (2) : 포스트에 댓글란 추가하기"
 category :
-  - github-blog
+  - etc
 tag :
   - github
   - blog
@@ -14,7 +14,7 @@ header:
 ---
 
 
-### 1. Disqus에 가입하고 코드를 생성해야합니다
+## 1. Disqus에 가입하고 코드를 생성해야합니다
 
 - <a href="https://disqus.com/">Disqus 사이트</a>에 접속해주세요
 - ``GET START``를 선택해주세요
@@ -33,7 +33,7 @@ header:
 
 
 
-### 2. disqus_comments.html 파일을 추가해주세요
+## 2. disqus_comments.html 파일을 추가해주세요
 
 - _includes/에 disqus_comments.html을 추가해주세요. 
 - 아래 링크에 있는 코드를 복사한 다음
@@ -46,7 +46,7 @@ s.src = 'https://' +위에서 정한 웹사이트 이름+ '.disqus.com/embed.js'
 ```
 
 
-### 3. home, page, post.html 파일을 추가해주세요
+## 3. home, page, post.html 파일을 추가해주세요
 
 
 - <a href="https://raw.githubusercontent.com/indigo218/indigo218.github.io/master/_layouts/home.html">_layouts/home.html</a>
@@ -61,10 +61,7 @@ s.src = 'https://' +위에서 정한 웹사이트 이름+ '.disqus.com/embed.js'
 
 
 
----
 
-
-
-### Reference 
+## Reference 
 
 - <a href="https://17billion.github.io/jekyll/disqus/reply/2017/06/01/jekyll_disqus.html"> 참고사이트(17billion.github.io) </a>

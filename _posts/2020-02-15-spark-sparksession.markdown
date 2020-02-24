@@ -1,5 +1,5 @@
 ---
-title : "스파크(4) : SparkSession"
+title : "스파크 (4) : SparkSession"
 category :
   - spark
 tag :

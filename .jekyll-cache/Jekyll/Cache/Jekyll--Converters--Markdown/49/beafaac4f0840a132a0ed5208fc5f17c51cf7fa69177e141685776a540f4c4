@@ -1,0 +1,66 @@
+I"�<h3 id="1-disqus에-가입하고-코드를-생성해야합니다">1. Disqus에 가입하고 코드를 생성해야합니다</h3>
+
+<ul>
+  <li><a href="https://disqus.com/">Disqus 사이트</a>에 접속해주세요</li>
+  <li><code class="highlighter-rouge">GET START</code>를 선택해주세요</li>
+  <li><code class="highlighter-rouge">I want to install Disqus on my site</code>를 클릭합니다</li>
+  <li><code class="highlighter-rouge">Website Name</code>을 지정해야 합니다.</li>
+</ul>
+
+<p><img src="../assets/img/disqus1.png" /></p>
+
+<ul>
+  <li>Plan은 <code class="highlighter-rouge">Basic</code>을 선택하면 됩니다.</li>
+</ul>
+
+<p><img src="../assets/img/disqus2.png" /></p>
+
+<ul>
+  <li>맞는 플랫폼을 선택합니다. 저는 <code class="highlighter-rouge">Jekyll</code>을 사용하였습니다.</li>
+</ul>
+
+<p><img src="../assets/img/disqus3.png" /></p>
+
+<h3 id="2-disqus_commentshtml-파일을-추가해주세요">2. disqus_comments.html 파일을 추가해주세요</h3>
+
+<ul>
+  <li>_includes/에 disqus_comments.html을 추가해주세요.</li>
+  <li>아래 링크에 있는 코드를 복사한 다음
+    <ul>
+      <li><a href="https://raw.githubusercontent.com/floating218/floating218.github.io/master/_includes/disqus_comments.html">_includes/disqus_comments.html</a></li>
+    </ul>
+  </li>
+  <li>이 파일에서 <code class="highlighter-rouge">s.src</code>부분만 수정해 주세요. s.src는 1번 단계에서 <code class="highlighter-rouge">Website Name</code>에 지정한 웹 사이트 이름을 넣어주시면 됩니다. 다만, <code class="highlighter-rouge">myid.github.io</code>로 정한 경우, <code class="highlighter-rouge">myid_github_io</code>로 넣으셔야 합니다.</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>s.src = 'https://' +위에서 정한 웹사이트 이름+ '.disqus.com/embed.js';
+</code></pre></div></div>
+
+<h3 id="3-home-page-posthtml-파일을-추가해주세요">3. home, page, post.html 파일을 추가해주세요</h3>
+
+<ul>
+  <li><a href="https://raw.githubusercontent.com/indigo218/indigo218.github.io/master/_layouts/home.html">_layouts/home.html</a>
+    <ul>
+      <li>중간에 웹사이트이름과 깃허브 사이트 링크는 본인의 것으로 변경해주세요.</li>
+    </ul>
+  </li>
+  <li><a href="https://raw.githubusercontent.com/indigo218/indigo218.github.io/master/_layouts/page.html">_layouts/page.html</a>
+    <ul>
+      <li>수정할 필요 없습니다.</li>
+    </ul>
+  </li>
+  <li><a href="https://raw.githubusercontent.com/indigo218/indigo218.github.io/master/_layouts/post.html">_layouts/post.html</a>
+    <ul>
+      <li><code class="highlighter-rouge">s.src</code>부분을 disqus_comments.html에서처럼 수정해 주세요.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="reference">Reference</h3>
+
+<ul>
+  <li><a href="https://17billion.github.io/jekyll/disqus/reply/2017/06/01/jekyll_disqus.html"> 참고사이트(17billion.github.io) </a></li>
+</ul>
+:ET
