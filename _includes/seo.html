@@ -1,4 +1,5 @@
 <!-- begin _includes/seo.html -->
+
 {%- if site.url -%}
   {%- assign seo_url = site.url | append: site.baseurl -%}
 {%- endif -%}
@@ -64,6 +65,7 @@
 <meta property="og:site_name" content="{{ site.title }}">
 <meta property="og:title" content="{{ page.title | default: site.title | markdownify | strip_html | strip_newlines | escape_once }}">
 <meta property="og:url" content="{{ canonical_url }}">
+
 
 {% if page.excerpt %}
   <meta property="og:description" content="{{ seo_description }}">

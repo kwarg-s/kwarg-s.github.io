@@ -45,6 +45,6 @@
     {% endif %}
 
     <!-- 포스트 부연 설명: archive__item-excerpt -->
-    {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description"  >{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
+    {% if post.excerpt %}<p class="archive__item-excerpt"  itemprop="description"  >{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
   </article>
 </div>
