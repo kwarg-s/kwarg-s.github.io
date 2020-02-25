@@ -32,10 +32,11 @@
     </div>
     <!-- 돋보기 누르면 사라지는 장면 끝 -->
 
-    <!-- 돋보기 누르면 나타나는 장면 -->
+    <!-- 돋보기 누르면 나타나는 장면 : 원래는 archive-search대신 search_form.html-->
     {% if site.search == true %}
       <div class="search-content" >
-        {% include search_form.html %}
+        
+        {% include archive-search.html %}
       </div>
     {% endif %}
     <!-- 돋보기 누르면 나타나는 장면 끝 -->
