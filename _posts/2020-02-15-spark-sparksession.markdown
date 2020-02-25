@@ -1,5 +1,6 @@
 ---
 title : "스파크 (4) : SparkSession"
+subtitle : "SparkContext와 SparkSession"
 category :
   - spark
 tag :

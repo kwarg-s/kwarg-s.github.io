@@ -1,5 +1,6 @@
 ---
 title : "운영체제 (2) : 운영체제 구조"
+subtitle : "응용프로그램, API, 시스템콜"
 category :
   - os
 tag :

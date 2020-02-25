@@ -1,5 +1,6 @@
 ---
 title : "운영체제 (4) : 스케줄링 알고리즘"
+subtitle : "FIFO, SJF, Priority-based, RobinRound"
 category :
   - os
 tag :

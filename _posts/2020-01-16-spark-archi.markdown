@@ -1,5 +1,6 @@
 ---
-title : "스파크 (2) : 스파크 아키텍쳐"
+title : "스파크 (2) : 스파크"
+subtitle : "스파크의 개념과 구조"
 category :
   - spark
 tag :

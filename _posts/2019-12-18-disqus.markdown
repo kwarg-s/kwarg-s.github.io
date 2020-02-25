@@ -1,5 +1,6 @@
 ---
 title : "깃허브 블로그 (2) : 포스트에 댓글란 추가하기"
+subtitle : "DISQUS 댓글 추가하는 법"
 category :
   - etc
 tag :

@@ -1,5 +1,6 @@
 ---
 title : "스파크 (3) : PySpark 설치"
+subtitle : "리눅스에서 PySpark 설치하기"
 category :
   - spark
 tag :
