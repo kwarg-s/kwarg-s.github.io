@@ -26,15 +26,19 @@
     {% include browser-upgrade.html %}
     {% include masthead.html %}
 
+    <!-- 돋보기 누르면 사라지는 모든 장면 -->
     <div class="initial-content">
       {{ content }}
     </div>
+    <!-- 돋보기 누르면 사라지는 장면 끝 -->
 
+    <!-- 돋보기 누르면 나타나는 장면 -->
     {% if site.search == true %}
-      <div class="search-content">
+      <div class="search-content" >
         {% include search_form.html %}
       </div>
     {% endif %}
+    <!-- 돋보기 누르면 나타나는 장면 끝 -->
 
     <div class="page__footer">
       <footer>

@@ -2,6 +2,8 @@
    SEARCH
    ========================================================================== */
 
+
+
    .layout--search {
     .archive__item-teaser {
       margin-bottom: 0.25em;
@@ -62,11 +64,11 @@
       font-size: $type-size-3;
   
       @include breakpoint($large) {
-        font-size: $type-size-2;
+        font-size: $type-size-5;
       }
   
       @include breakpoint($x-large) {
-        font-size: $type-size-1;
+        font-size: $type-size-5;
       }
     }
   

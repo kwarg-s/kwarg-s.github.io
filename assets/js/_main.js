@@ -55,11 +55,19 @@ $(document).ready(function() {
   $(".search__toggle").on("click", function() {
     $(".search-content").toggleClass("is--visible");
     $(".initial-content").toggleClass("is--hidden");
+    $("#backbutton").css('color', 'blue'); ;
     // set focus on input
     setTimeout(function() {
       $("#search").focus();
     }, 400);
   });
+
+  $(".back__button").on("click", function() {
+    $(".search-content").removeClass("is--visible");
+    $(".initial-content").removeClass("is--hidden");
+  });
+
+
 
   // init smooth scroll
   $("a").smoothScroll({ offset: -20 });
