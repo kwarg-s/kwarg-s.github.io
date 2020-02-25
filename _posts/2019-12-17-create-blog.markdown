@@ -1,6 +1,6 @@
 ---
 title : "깃허브 블로그 (1) : 깃허브 블로그 생성하기"
-subtitle : "깃허브 repository를 이용한 블로그 생성"
+excerpt : "깃허브 repository를 이용한 블로그 생성"
 category :
   - etc
 tag :

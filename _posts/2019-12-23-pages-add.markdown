@@ -1,6 +1,6 @@
 ---
 title : "깃허브 블로그 (3) : 상단바 메뉴 추가하기"
-category :
+excerpt :
   - etc
 tag :
   - github

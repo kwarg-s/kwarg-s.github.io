@@ -1,5 +1,6 @@
 ---
 title : "운영체제 (1) : 운영체제 역사"
+excerpt : "1950년대부터 2000년대까지"
 category :
   - os
 tag :
