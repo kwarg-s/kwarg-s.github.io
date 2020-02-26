@@ -3,8 +3,11 @@ layout: single
 permalink: /about/
 title: "About Me"
 category: etc
+author_profile: true
 header:
-  overlay_image: /assets/images/staff_sbnu.jpg
+  teaser : /assets/images/category/subin.jpg
+  overlay_image : /assets/images/category/subin.jpg
+  overlay_filter: 0.1
 ---
 
 # 둥둥 (Floating218)
