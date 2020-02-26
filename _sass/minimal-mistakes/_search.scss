@@ -20,6 +20,10 @@
     cursor: pointer;
     -webkit-transition: 0.2s;
     transition: 0.2s;
+
+    //커스텀
+    margin-left:0;
+    
   
     &:hover {
       color: $text-color;
