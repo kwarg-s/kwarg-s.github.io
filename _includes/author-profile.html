@@ -6,10 +6,10 @@
 
 <div itemscope itemtype="http://schema.org/Person">
 
-  
 
 
   {% if author.avatar %}
+    <!-- 프사,상메: author__avatar -->
     <div class="author__avatar">
       {% if author.avatar contains "://" %}
         {% assign author_src = author.avatar %}

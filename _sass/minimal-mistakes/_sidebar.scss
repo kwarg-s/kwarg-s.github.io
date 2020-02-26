@@ -30,7 +30,7 @@
     background-color: white;
     float:none;
     // height: 1.5%;
-    height:70px;
+    height: 100%;
     padding-top:0.5%;
     padding-left:1%;
 
@@ -151,6 +151,11 @@
     display: block;
     width: auto;
     height: auto;
+  }
+
+  @include breakpoint(max-width $large) {
+    
+    margin-bottom:0px;
   }
 
   img {
