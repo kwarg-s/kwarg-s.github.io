@@ -2,6 +2,10 @@
 layout: default
 ---
 
+<!-- Recentposts 전용 레이아웃 -->
+
+
+
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
   {% include page__hero.html %}
 {% elsif page.header.video.id and page.header.video.provider %}
@@ -16,6 +20,7 @@ layout: default
 
 <div id="main" role="main">
   {% include sidebar.html %}
+  <!--  -->
 
   <div class="archive">
     {% unless page.header.overlay_color or page.header.overlay_image %}

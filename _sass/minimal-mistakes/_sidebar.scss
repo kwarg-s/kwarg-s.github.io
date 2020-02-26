@@ -6,17 +6,33 @@
    Default
    ========================================================================== */
 
+
 .sidebar {
   @include clearfix();
+  
+
+  // 모바일버전
   @include breakpoint(max-width $large) {
+ 
     /* fix z-index order of follow links */
     position: relative;
+    position:sticky;
+    background-color: white;
+    top:0;
+    width:100%;
+
     z-index: 10;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+
+    
+
+
   }
 
+  // 웹버전
   @include breakpoint($large) {
+    
     float: left;
     width: calc(#{$right-sidebar-width-narrow} - 1em);
     opacity: 0.75;
@@ -36,7 +52,9 @@
     }
   }
 
+  //최대버전
   @include breakpoint($x-large) {
+    
     width: calc(#{$right-sidebar-width} - 1em);
   }
 
