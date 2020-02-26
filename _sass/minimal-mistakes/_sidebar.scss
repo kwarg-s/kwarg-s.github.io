@@ -16,8 +16,8 @@
  
     /* fix z-index order of follow links */
     position: relative;
-    position:sticky;
-    background-color: white;
+    
+    
     top:0;
     width:100%;
 
@@ -25,7 +25,15 @@
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
 
-    
+    // 커스터마이징
+    position:sticky;
+    background-color: white;
+    float:none;
+    height: 4%;
+    padding-top:2%;
+    padding-left:2%;
+
+    //
 
 
   }
@@ -218,7 +226,10 @@
 
   button {
     margin-bottom: 0;
+    //커스터마이즈: 모바일에서도 등장안하도록
+    display:none;
 
+    //최대사이즈:등장안함
     @include breakpoint($large) {
       display: none;
     }
