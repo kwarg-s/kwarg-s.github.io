@@ -12,25 +12,14 @@ header:
 
 # 둥둥 (Floating218)
 
-> 소개
+<img src="../assets/images/tiger-whole.jpg" style="width:50%;">
 
-소개
+> 안녕하세요 둥둥입니다 
 
-**연락은 xxx@gmail.com**
-
-
-## Experience
-
-- 내용
-
-## Education
-
-- 내용
-
-* 내용
-
-
+- 비전공자
+- <a href="http://cclab.snu.ac.kr">인지컴퓨팅 연구실</a> 소속
+- 관심사: 데이터분석, 자연어처리
 
 ## Contact
 
-- 내용
+

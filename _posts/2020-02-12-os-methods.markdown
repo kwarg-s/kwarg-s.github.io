@@ -1,5 +1,5 @@
 ---
-title : "운영체제 (3) : 프로세스 스케줄링"
+title : "운영체제 (3) : 운영체제의 운용기법"
 excerpt : "배치처리시스템, 시분할시스템, 멀티태스킹, 멀티프로그래밍"
 category :
   - os
@@ -86,5 +86,5 @@ header:
 
 
 
-### Reference
-- <a href="http://www.fastcampus.co.kr">fast campus 강의</a>
+## Reference
+- <a href="https://www.fastcampus.co.kr/dev_online_cs/">fast campus 강의</a>
