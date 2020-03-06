@@ -100,7 +100,7 @@ urlpatterns = += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ## 7. html 파일에 DB 데이터 넣기 
 
 **myapp/templates/index.html** 
-```html
+```
 {%for data in mydb.all%}
   {% if mydb.pic %}
   <p>
