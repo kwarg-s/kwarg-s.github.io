@@ -89,6 +89,14 @@ int main(){
 2. ``int global_data2=1;``전역변수에 값을 넣음 -> 초기값이 있음 -> DATA에 저장됩니다.
 3. ``함수 속 int *data;``: 지역변수를 선언 함 -> stack에 저장됩니다.
 
+### 프로세스 간 공유메모리  
+
+<center>
+<img src="../assets/img/os/processmemory.png" style="width:70%;">
+</center>  
+
+공유 메모리는 여러 개의 프로세스에서 공통으로 사용할 수 있는 메모리 영역이며, 시스템 콜에 의해 작성됩니다. attach를 통해 프로세스는 공유메모리에 접속합니다.  
+
 ## PCB
 
 ### **PCB (Process Control Block)의 개념**
