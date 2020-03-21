@@ -33,6 +33,8 @@ header:
 3. 시민이 책을 다 읽거나, 기한이 다 되면, 도서관이 책을 회수합니다.
     - 운영체제가 자원을 회수합니다.  
 
+
+
 ## **운영체제의 구조**
 
 <!-- https://steemitiages.com/150X150/ -->
@@ -61,8 +63,14 @@ header:
 **시스템콜  : 운영체제는 응용프로그램을 위해서 시스템콜을 제공합니다.**  
 
 - 운영체제가 운영체제 각 기능을 사용할 수 있게하는 명령어 또는 함수를 제공하는데 이를 시스템콜이라고 합니다. 
-- api 내부에는 시스템콜을 호출하는 형태로 만들어집니다.  
-
+- api 내부에는 시스템콜을 호출하는 형태로 만들어집니다.   
+- os의 system call들
+    - process management
+    - main memory management
+    - file management
+    - disk management
+    - io management
+    - networking protection
 
 ## **운영체제를 만드는 순서**
 
