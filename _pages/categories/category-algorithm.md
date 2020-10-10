@@ -8,7 +8,7 @@ header:
   overlay_image : /assets/images/category/data.jpg
 ---
 
-{% assign posts = site.categories.spark | sort:"date" %}
+{% assign posts = site.categories.algorithm | sort:"date" %}
 
 {% for post in posts %}
   {% include archive-single.html type=page.entries_layout %}
