@@ -1,5 +1,5 @@
 ---
-title : "[스파크] 2. 스파크"
+title : "스파크"
 excerpt : "스파크의 개념과 구조"
 category :
   - spark

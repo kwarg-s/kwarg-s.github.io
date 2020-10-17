@@ -1,5 +1,5 @@
 ---
-title : "[스파크] 1. 하둡과 MapReduce"
+title : "하둡과 MapReduce"
 excerpt : "하둡, MapReduce, HDFS, YARN"
 category :
   - spark

@@ -1,0 +1,379 @@
+---
+title : "Pyspark RDD 프로그래밍 심화"
+excerpt : "Pyspark, RDD, 액션, 변환, 그룹, 집합, 집계, 필터, 정렬"
+category :
+  - spark
+tag :
+  - spark
+  - kitkit 
+  - educational game
+use_math : true
+author_profile : true
+header:
+  teaser : /assets/images/category/data.jpg
+  overlay_image : /assets/images/category/data.jpg
+  overlay_filter: 0.1
+---
+
+이번에는 좀더 복잡한 함수를 통해 RDD를 다뤄보겠습니다. 
+
+## Spark Context에서 시작
+
+이번에도 Spark context에서 시작해서 RDD 연산을 시작할 것입니다. 
+
+```python
+from pyspark.sql import SparkSession
+spark=SparkSession.builder\
+    .master('local')\
+    .appName('My App Name')\
+    .getOrCreate()
+sc=spark.sparkContext
+```
+
+## 더 복잡한 RDD 액션
+
+### .first()
+
+첫번째 요소를 돌려줍니다.
+
+### .take(n)
+
+첫번째 ~ n번째의 요소를 리스트로 돌려줍니다.
+
+### .takeSample(bool,n)
+
+n개의 요소를 랜덤으로 샘플링하여 리스트로 돌려줍니다. bool이 True이면 복원추출을, False이면 비복원추출을 합니다.
+
+### .countByValue()
+
+각 요소별로 몇개가 있는지를 딕셔너리로 돌려줍니다. 
+
+```python
+rdd=sc.parallelize([1,1,1,1,3,3,4,4,4,4])
+rdd.countByValue() 
+'''
+defaultdict(int, {1: 4, 3: 2, 4: 4})
+'''
+rdd=sc.parallelize(['a','a','a','b','c','c'])
+rdd.countByValue() 
+'''
+defaultdict(int, {'a': 3, 'b': 1, 'c': 2})
+'''
+```
+
+### .reduce()
+
+RDD에 포함된 임의의 값 두개를 하나로 합치는 함수를 사용해서 하나의 값으로 병합하여 리턴합니다. 
+
+예를 들어, [a1,a2,a3,a4,a5]라는 rdd가 있다고 합시다. 
+
+그러면 우선, 첫번째와 두번째 요소인 a1과 a2을 가지고 함수 계산을 합니다. 이 값을 f(a1,a2)라고 하죠.
+
+그런 다음에, 이 함수값과 세번째 요소인 a3을 가지고 함수 계산을 하는 것입니다. 그러면 이 값은 f(f(a1,a2),a3)이 되겠죠.
+
+이런 식으로 마지막 요소까지 계산한 결과를 리턴하는 것입니다.
+
+```python
+rdd=sc.parallelize(['a','b','c','d','e'])
+rdd=rdd.reduce(lambda x,y:x+y) #1-2=-1, -1-3=-4
+print(rdd) #"abcde
+```
+
+### .fold()
+
+reduce 연산과 거의 유사한데 차이점은 "초기값" 및 "최종값"을 설정해준다는 것입니다.
+
+```python
+rdd=sc.parallelize([3,4,5])
+rdd=rdd.fold(10,lambda x,y:x*y)
+rdd #6000 = 초기값10*3*4*5*최종값10
+```
+
+### .sum()
+
+```python
+rdd=sc.parallelize(range(10))
+rdd.sum() #45
+```
+
+## Key,Value에 대한 기본적인 RDD 변환(transformation)
+
+지난 포스트에는 RDD 변환에 가장 기본적인 연산방법 map, flatMap, groupBy, sortBy에 대해 알아보았습니다. RDD 데이터 형식이 (key, Value)로 되어있을 경우 어떻게 변환할 수 있을까요?
+
+### .mapValues()
+
+[(키값,Value값)] 꼴로 되어있는 RDD에 대해서 mapValues(함수)를 실행하면, 키값와 value값 중에서 Value값에 대해서만 마치 .map(함수)을 수행하듯 함수가 수행되고, 키값은 원래 값을 유지합니다.
+
+```python
+rdd=sc.parallelize([('a',1),('b',2),('c',3)])
+rdd=rdd.mapValues(lambda x:x+1)
+# x<-1
+# x+1=2
+# mapValues 결과 = [(키,함수결과)] = [('a',2)...] 
+
+rdd.collect()
+#[('a', 2), ('b', 3), ('c', 4)]
+```
+
+좀 더 응용을 하면, groupBy() 되어 있는 RDD에 mapValue()를 실행하면 편리합니다.
+
+```python
+rdd=sc.parallelize(["Apple",'Ant','Bear','Bat','Cat','Corn'])
+rdd=rdd.groupBy(lambda x:x[0])
+rdd.collect()
+'''
+[('A', <pyspark.resultiterable.ResultIterable at 0x7f08f5031b00>),
+ ('B', <pyspark.resultiterable.ResultIterable at 0x7f08f27270f0>),
+ ('C', <pyspark.resultiterable.ResultIterable at 0x7f08f27275c0>)]
+'''
+showrdd=rdd.map(lambda x:(x[0],list(x[1])))
+showrdd.collect()
+'''
+[('A', ['Apple', 'Ant']), 
+('B', ['Bear', 'Bat']), 
+('C', ['Cat', 'Corn'])]
+'''
+mv=showrdd.mapValues(lambda x:[word.upper() for word in x])
+mv.collect()
+'''
+[('A', ['APPLE', 'ANT']), 
+('B', ['BEAR', 'BAT']), 
+('C', ['CAT', 'CORN'])]
+'''
+```
+
+### .flatMapValues()
+
+mapValues와 마찬가지로 [(키값,Value값)] 꼴로 되어있는 RDD에 대해 실행합니다. flatMapValues(함수)에서 함수는 Value값을 변현한 리스트를 리턴합니다. 그러면 각 리스트 내부의 요소를 RDD의 각 요소로 하는 RDD가 만들어집니다.
+
+```python
+rdd=sc.parallelize([("A","He is a happy dog."),
+                   ("B","She is a sad cat.")])
+rdd=rdd.flatMapValues(lambda x:x.split(" "))
+# x <- "He is a happy dog"
+# x.split(" ")=["He","is","a","happy","dog"]
+# flatMapValues 결과 = [(키,함수결과)] = [(a,"He,"is","a","happy","dog")...]
+
+rdd.collect()
+'''
+[('A', 'He'),
+ ('A', 'is'),
+ ('A', 'a'),
+ ('A', 'happy'),
+ ('A', 'dog.'),
+ ('B', 'She'),
+ ('B', 'is'),
+ ('B', 'a'),
+ ('B', 'sad'),
+ ('B', 'cat.')]
+'''
+```
+
+### .groupByKey()
+
+[(키값,Value값)] 꼴로 되어있는 RDD에 대해 실행하며, 키값에 대해서 그루핑을 해줍니다. 
+
+```python
+rdd=sc.parallelize([(1,"an apple"),(1,"a carrot"),(2, "an ant"),\
+                   (2,"a panda"),(2, "a dog"),(2, "a bear")])
+rdd=rdd.groupByKey().map(lambda x:(x[0],list(x[1])))
+rdd.collect()
+'''
+[(1, ['an apple', 'a carrot']), 
+(2, ['an ant', 'a panda', 'a dog', 'a bear'])]
+'''
+```
+
+### .sortByKey()
+
+```python
+rdd=sc.parallelize([(32,"an apple"),(41,"a carrot"),(21, "an ant"),\
+                   (12,"a panda"),(62, "a dog"),(2, "a bear")])
+rdd=rdd.sortByKey()
+rdd.collect()
+'''
+[(2, 'a bear'),
+ (12, 'a panda'),
+ (21, 'an ant'),
+ (32, 'an apple'),
+ (41, 'a carrot'),
+ (62, 'a dog')]
+'''
+```
+
+## 그룹 연산
+
+### .zip()
+
+python의 zip함수처럼 같은 인덱스끼리 짝지어줍니다. 따라서 크기가 같은 2개의 rdd끼리 해야합니다. 
+
+```python
+rdd1=sc.parallelize(['a','b','c'])
+rdd2=sc.parallelize([10,20,30])
+result=rdd1.zip(rdd2)
+result.collect()
+#[('a', 10), ('b', 20), ('c', 30)]
+```
+
+### .cogroup()
+
+[(key,value)] 형태의 2개의 rdd를 cogroup합니다.
+
+같은 key끼리 묶어줍니다. 
+
+그 결과, [(key,[rdd1의 values],[rdd2의 values])]가 됩니다.
+
+```python
+rdd1=sc.parallelize([('a',1),('b',2),('a',3)])
+rdd2=sc.parallelize([('b',4)])
+result=rdd1.cogroup(rdd2)
+#[(키값, [rdd1에 있는 values], [rdd2에 있는 values])]
+
+print(result.map(lambda x:(x[0],list(x[1][0]),list(x[1][1]))).collect())
+#[('b', [2], [4]), ('a', [1, 3], [])]
+```
+
+## 집합 연산
+
+### .cartesian
+
+두 RDD 요소간의 모든 조합을 리턴합니다.
+
+```python
+rdd1=sc.parallelize([1,2,3])
+rdd2=sc.parallelize(['a','b'])
+result=rdd1.cartesian(rdd2)
+result.collect()
+#[(1, 'a'), (1, 'b'), (2, 'a'), (2, 'b'), (3, 'a'), (3, 'b')]
+```
+
+### .union() .intersection() .subtract()
+
+집합처럼 RDD도 합집합과 교집합과 차집합을 구할 수 있습니다.
+
+```python
+rdd1=sc.parallelize([1,2,3])
+rdd2=sc.parallelize([3,4])
+print(rdd1.union(rdd2).collect()) #[1,2,3,3,4]
+print(rdd1.intersection(rdd2).collect()) #[3]
+print(rdd1.subtract(rdd2).collect()) #[2,1]
+```
+
+### .join()
+
+두 RDD가 [(키,값)]꼴로 되어 있는경우, join할 수 있습니다. 
+
+pandas의 inner join처럼, 두 rdd 모두에 들어있는 키에 대해, value값을 모아줍니다.
+
+```python
+rdd1=sc.parallelize([('k1','v1'),('k2','v2'),('k3','v3')])
+rdd2=sc.parallelize([('k2','v4'),('k3','v5')])
+result=rdd1.join(rdd2)
+result.collect()
+#[('k2', ('v2', 'v4')), ('k3', ('v3', 'v5'))]
+```
+
+### .leftOuterJoin() .rightOuterJoin()
+
+```python
+rdd1=sc.parallelize([('k1','v1'),('k2','v2'),('k3','v3')])
+rdd2=sc.parallelize([('k2','v4'),('k3','v5')])
+result=rdd1.leftOuterJoin(rdd2)
+result.collect()
+#[('k2', ('v2', 'v4')), ('k1', ('v1', None)), ('k3', ('v3', 'v5'))]
+```
+
+### .subtractByKey()
+
+차집합과 비슷하게,
+
+키가 겹치는 것은 제외하고 돌려줍니다.
+
+```python
+rdd1=sc.parallelize([('k1','v1'),('k2','v2'),('k3','v3')])
+rdd2=sc.parallelize([('k2','v4'),('k3','v5')])
+result=rdd1.subtractByKey(rdd2)
+result.collect()
+#[('k1', 'v1')]
+```
+
+## 집계 연산
+
+### .reduceByKey()
+
+같은 key인 value끼리만 reduce를 실행합니다.
+
+```python
+rdd=sc.parallelize([('k1',1),('k1',2),('k1',3),('k3',3)])
+result=rdd.reduceByKey(lambda x,y:x+y)
+result.collect()
+#[('k1', 6), ('k3', 3)]
+```
+
+### .foldByKey()
+
+초기값을 설정한 reduceByKey
+
+```python
+rdd=sc.parallelize([('k1',1),('k1',2),('k1',3),('k3',3)])
+result=rdd.foldByKey(10,lambda x,y:x+y)
+result.collect()
+#[('k1', 16), ('k3', 13)]
+```
+
+### .combineByKey()
+
+## 필터, 정렬 연산
+
+### .keys() .values()
+
+```python
+rdd=sc.parallelize([('k1','v1'),('k2','v2'),('k3','v3')])
+print(rdd.keys().collect())#['k1', 'k2', 'k3']
+print(rdd.values().collect())#['v1', 'v2', 'v3'
+```
+
+### .sample()
+
+```python
+rdd=sc.parallelize(range(5))
+print(rdd.sample(True,0.5).collect()) #(복원, 각 요소가 나타나는 횟수의 기대값)
+#[3, 3]
+print(rdd.sample(False,0.5).collect()) #(비복원, 각 요소가 샘플에 포함될 확률)
+#[2, 3, 4]
+```
+
+## Summary
+
+1. 더 복잡한 RDD 액션
+    - `first()`
+    - `take()`
+    - `takeSample()`
+    - `countByValue()`
+    - `reduce()`
+    - `fold()`
+2. Key,value에 대한 RDD 변환
+    - `mapValues()`
+    - `flatMapValues()`
+    - `groupByKey()`
+    - `sortByKey()`
+3. 그룹 연산
+    - `zip()`
+    - `cogroup()`
+4. 집합 연산
+    - `cartesian()`
+    - `union() intersection() subtract()`
+    - `join()`
+    - `leftOuterJoin() rightOuterJoin()`
+    - `subtractByKey()`
+5. 집계 연산
+    - `reduceByKey()`
+    - `foldByKey()`
+    - `combineByKey()`
+6. 필터 정렬 연산
+    - `keys() values()`
+    - `sample()`
+
+## Reference
+- 빅데이터 분석을 위한 스파크2 프로그래밍 (백성민)
+- 파이썬을 활용한 스파크 프로그래밍 (제프리 에이븐)
