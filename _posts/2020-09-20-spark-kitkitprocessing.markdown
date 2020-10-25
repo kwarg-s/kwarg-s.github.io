@@ -23,6 +23,12 @@ header:
 
 사용자가 게임을 플레이하면서 하나의 "ACTION"을 취할 때마다 한줄의 로그 데이터가 기록이 됩니다.
 
+전체 데이터 로그의 RDD를 rdd라고 했을때, 샘플 데이터 몇개만 뽑아서 진행해보도록 하겠습니다. 
+
+```python
+sample_data=rdd.take(30)
+```
+
 로그 데이터 한줄의 예시는 아래와 같습니다.
 
 ### 로그 데이터 예시
@@ -91,6 +97,7 @@ header:
 
 ```json
 #event_func_type
+event_func_type=
 ['touchEvent_Begin_End',
  'dailyGameChoice_ChooseDailyGame',
  'game_Begin',
@@ -144,6 +151,8 @@ header:
       |- event key3
       |- ...
 ```
+
+변형하기 위한 함수를 짰습니다. 
 
 ```python
 # part1) .func이 존재하는 데이터의 하위 키값을 저장합니다
@@ -262,6 +271,8 @@ event_template['1.data'] = []
 '''
 ```
 
+## 템플릿을 통해 새로운 데이터 구조 완성
+
 ### 빈 템플릿에 데이터 로그 정보를 끼어넣어서 새 데이터 완성
 
 ```python
@@ -318,4 +329,14 @@ input_data_to_template(sample_data[10])
   '2.targetCount': None,
   '2.param': None}}
 '''
+```
+
+### 스파크를 통해 전체 데이터 로그 처리하기
+
+rdd에 map 함수를 통해 전체 데이터 로그에 대해 transformation을 진행합니다. 
+
+```python
+rdd_transformed=rdd.map(input_data_to_template)
+rdd_transformed.take(1) 
+#결과는 위와 비슷한 형태일 것입니다. 
 ```

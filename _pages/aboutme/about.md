@@ -35,9 +35,7 @@ header:
 - **설문 조사 전용 챗봇 시스템 개발 프로젝트** (2019.3 – 2020.1) : 인터넷중독 유형분석 및 원인분석 모델 개발 프로젝트의 연구비를 받아 수행한 프로젝트입니다. 설문 조사를 위한 챗봇 개발 및 실험을 보조하였으며, 수집한 데이터를 분석 및 논문 작성에도 참여하였습니다. 논문 주제는 인간형 챗봇과 기계적 챗봇 사이의 효과를 비교하는 것이었습니다. 인간형 챗봇이 기계적 챗봇에 비해 설문자의 솔직한 대답을 이끌어낼 수 있다는 가설을 검증하였습니다. 논문은 “Application of humanization to survey chatbots: Change in chatbot perception, survey data quality, and interaction experience”라는 제목으로 Conference on Human Factors in Computing Systems (CHI '21)에 제출한 상태입니다. 
 
 - **Enuma와의 협력 / 서울대학교 교내 빅데이터 분석 프로젝트** (2018.9 - 2019.8 / 2019.9 - 2020.2) : 저희 연구실에서는 교육용 게임 회사 "Enuma"와 협업을 하여 게임으로부터 수집한 데이터를 전처리하고 분석하는 업무를 맡았습니다. 산학 협력이 종료된 후에는, 보유한 대용량 데이터를 가지고 교내 프로젝트로 이어서 진행하였습니다. 이 프로젝트에서는 비정형 대규모 데이터를 이용해서 기계학습 분석 모형을 개발하는 것이 목표였습니다. 저는 이 프로젝트에서 Project manager를 맡았습니다. 데이터는 저희 연구실에서 보유한 서버 컴퓨터의 hadoop 파일 시스템에 저장하였으며 spark 분산 처리 시스템을 통해 전처리 및 분석을 수행하였습니다. 저는 이 데이터로부터 게임의 UI의 사용 패턴을 분석하여 "Should students use digital scratchpads? Impact of using a digital assistive tool on arithmetic problem-solving"이라는 제목으로 짧은 paper를 The 20th International Conference on Artificial Intelligence in Education에서 발표하였습니다. 저는 pm으로서 예산 처리 등 행정업무 및 결과보고서 작성도 담당하였습니다. 현재 저는 본 프로젝트에서 수집한 데이터를 통해 학생들의 게임 플레이 패턴을 분석하여 석사 학위 논문 "교육용 게임에서 action dynamic feature을 활용한 gaming the system 행동 판별 방안"을 작성하고 있습니다. 
-
   - <a href="https://floating218.github.io/categories/spark">Spark 분산 처리 공부한 내용 정리</a>
-
 
 - **문장형 수학 문제 풀이 프로젝트** (2019.1 – present) : 이 프로젝트는 문장형(서술형) 수학 문제를 자동으로 풀어주는 인공지능 알고리즘을 개발하는 프로젝트입니다. 저는 본 프로젝트에서 수학 문제의 해답 데이터 수집을 보조하였습니다. 또한 프로젝트에서 사용하는 문장형 수학 문제 풀이 모델(Bert 모델)을 구현해보고 수업 중에 수강생들에게 모델을 소개하는 내용의 발표를 수행하기도 하였습니다. 
 
