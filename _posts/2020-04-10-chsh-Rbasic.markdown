@@ -2,9 +2,10 @@
 title : "[CheatSheet] R 기본"
 excerpt : "R코드의 기본"
 category :
-  - etc
+  - cheatsheet
 tag :
-  - etc
+  - cheatsheet
+  - R
 use_math : true
 author_profile : true
 header:

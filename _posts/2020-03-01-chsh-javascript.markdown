@@ -2,9 +2,10 @@
 title : "[CheatSheet] JavaScript"
 excerpt : "자바스크립트"
 category :
-  - etc
+  - cheatsheet
 tag :
-  - etc
+  - cheatsheet
+  - Java Script
 use_math : true
 author_profile : true
 header:

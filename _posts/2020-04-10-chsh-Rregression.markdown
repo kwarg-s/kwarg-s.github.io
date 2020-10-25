@@ -2,9 +2,10 @@
 title : "[CheatSheet] R 회귀분석"
 excerpt : "R로 회귀분석하기"
 category :
-  - etc
+  - cheatsheet
 tag :
-  - etc
+  - cheatsheet
+  - R
 use_math : true
 author_profile : true
 header:
