@@ -22,6 +22,7 @@ header:
 ## 스킬
 - 프로그래밍 언어: Python, R, javascript, HTML, CSS, C#, C++, SQL, Java
   - <a href="https://floating218.github.io/categories/algorithm">알고리즘 공부 정리</a>
+  - <a href="https://floating218.github.io/categories/cheatsheet">코딩 공부 정리 (cheatsheet)</a>
 - 데이터 분석: Spark, Hadoop, R studio, Rapidminer, Knime 
 - 딥러닝 프레임워크: Pytorch, Tensorflow(조금)
 - 개발 경험: Django, Unity, Cocos2d(조금)
