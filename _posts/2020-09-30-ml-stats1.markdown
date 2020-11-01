@@ -1,0 +1,19 @@
+---
+title : "통계학 (1) "
+excerpt : "통계학 (1) "
+category :
+  - ml
+tag :
+  - ml
+  - statistics 
+use_math : true
+author_profile : true
+header:
+  teaser : /assets/images/category/data.jpg
+  overlay_image : /assets/images/category/data.jpg
+  overlay_filter: 0.1
+---
+
+<img src="../assets/img/ml/week1-이미지/0001.jpg">
+<img src="../assets/img/ml/week1-이미지/0003.jpg">
+<img src="../assets/img/ml/week1-이미지/0003.jpg">
