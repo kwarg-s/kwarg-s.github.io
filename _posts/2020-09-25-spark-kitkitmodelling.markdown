@@ -211,6 +211,38 @@ problem_filtered=problem_grouped.filter(lambda x:x['is_solve']=='solve')
   'is_solve': 'solve'}]
 ```
 
+## 모델링하기
+
+### 이상치(아웃라이어) 대체하기
+
+응답 시간은 이상치가 많습니다. 기기 문제로 응답 시간이 음수로 나오거나, 오랫동안 켜놓고 다음 날에 접속하는 경우 응답 시간이 너무 길게 나올 수 있습니다. 이러한 이상치를 검출해서, 상한값이나 하한값으로 대체합니다. 
+
+```python
+def outlier_bottom_top(df):
+    q1=np.percentile(df, 25)
+    q3=np.percentile(df, 75)
+    iqr=q3-q1
+    bottom=q1-1.5*iqr
+    top=q3+1.5*iqr
+    return bottom,top
+
+btm,top=outlier_bottom_top(problem_filtered.flatMap(lambda x:x['times']).collect())
+#여기서 btm이 음수로 나오기 때문에, 대체는 0으로 할 것입니
+
+def replace_outlier(row):
+    global btm
+    global top
+    new_row=row
+    times=new_row['times']
+    times=[0 if t<0 else t for t in times]
+    times=[top if t>top else t for t in times]
+    new_row['times']=times
+    return new_row
+
+problem_filtered_replaced=problem_filtered.map(replace_outlier)
+problem_filtered_replaced.take(1)
+```
+
 ## 관심 있는 Feature 뽑기
 
 모델링을 위해 사용할 피쳐를 아래와 같이 디자인할 것입니다. 
@@ -256,8 +288,6 @@ filter(lambda x:x['times']!=[]).map(extract_features)
   'attempt_time': 1}]
 ```
 
-## 선형 회귀 모델링하기
-
 RDD를 데이터 프레임으로 바꿉니다. 
 
 ```python
@@ -266,29 +296,100 @@ import pandas as pd
 df=pd.DataFrame(problem_collected)
 ```
 
-아웃라이어를 검출해서, 상한값이나 하한값으로 대체합니다. 
+## 분포를 시각화
+
+Target에 해당하는 데이터를 히스토그램으로 시각화해보겠습니다. 결과를 보면 1~2번의 시도 이내에 문제를 solve한 경우가 대다수였습니다. 
 
 ```python
-def replace_outlier(df):
-    q1=np.percentile(df, 25)
-    q3=np.percentile(df, 75)
-    iqr=q3-q1
-    bottom=q1-1.5*iqr
-    top=q3+1.5*iqr
-    for i,v in enumerate(df):
-        if v<bottom:
-            df[i]=bottom
-        elif v>top:
-            df[i]=top
-    return df
-
-df_replace=df.copy()
-for col in df.columns:
-    df_replace[col]=replace_outlier(df_replace[col])
+import matplotlib.pyplot as plt
+plt.hist(df['attempt_time'])
+plt.show()
 ```
 
-Target에 해당하는 데이터를 히스토그램으로 시각화해보겠습니다. 
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/44954316-f4d4-45a2-a21f-826d8dea2f93/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/44954316-f4d4-45a2-a21f-826d8dea2f93/Untitled.png)
+
+### Linear regression 모델 만들기
 
 ```python
+from sklearn.linear_model import LinearRegression
+X=df.drop(['attempt_time'],axis=1)
+y=df[['attempt_time']]
+lr = LinearRegression()
+lr.fit(X, y)
+```
 
+### Coefficient 프린트
+
+```python
+coefs=pd.DataFrame(lr.coef_)
+coefs.columns=X.columns
+coef
+```
+
+[Untitled](https://www.notion.so/0dc06bf190a2493f8b8ad44422847545)
+
+coefficient의 부호를 통해 모델을 해석할 수 있습니다.
+
+- time_first: 첫시도의 응답 시간이 길수록, 시도 횟수가 많습니다
+- time_min: 응답 시간의 최소값이 클수록, 시도 횟수가 많습니다
+- time_max: 응답 시간의 최대값이 클수록, 시도 횟수가 많습니다
+- time_mean: 응답 시간의 최소값이 작을수록, 시도 횟수가 많습니다
+- time_median: 응답 시간의 중위값이 클수록, 시도 횟수가 많습니다
+- time_final: 마지막 시도의 응답 시간이 짧을수록, 시도 횟수가 많습니다
+
+### R square
+
+R square 값을 통해 회귀 모델의 정확도을 알 수 있습니다. 
+
+```python
+lr.score(X,y)
+'''
+0.6702498357978728
+'''
+```
+
+### Feature selection
+
+6개의 피쳐를 전부 사용한 것과, 몇개의 피쳐만을 사용한 것 간의 R square값을 비교했더니, 전부 사용한 것이 더 높았습니다.
+
+```python
+lr = LinearRegression()
+lr.fit(X, y)
+temp=lr.score(X,y)
+temp_columns=list(X.columns)
+
+while(True):
+    
+    if len(temp_columns)==1:
+        break
+    
+    #하나씩 뺸다. 
+    lst=[]
+    col_lst=[]
+    
+    for i in range(len(temp_columns)):
+        temp_temp_cols=[t for t in temp_columns]
+        temp_temp_cols.pop(i)
+        lr = LinearRegression()
+        lr.fit(X[temp_temp_cols], y)
+        s=lr.score(X[temp_temp_cols],y)
+        lst.append(s)
+        col_lst.append(cols)
+    
+    s=np.max(lst)
+    if temp<s:
+        temp_columns=col_lst[lst.index(s)]
+    elif temp>=s:
+        break
+
+temp,temp_columns
+'''
+(0.6702498357978728,
+ ['time_first',
+  'time_min',
+  'time_max',
+  'time_mean',
+  'time_median',
+  'time_final'])
+'''
 ```
