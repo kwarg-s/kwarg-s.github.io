@@ -49,6 +49,8 @@ header:
     - 결과물 (논문)
         - “[Should students use digital scratchpads? Impact of using a digital assistive tool on arithmetic problem-solving](https://link.springer.com/chapter/10.1007/978-3-030-23207-8_29)”. The 20th International Conference on Artificial Intelligence in Education (AIED 2019).
             - 요약: 게임에서 제공하는 scratchpad UI와 학습 성취도 간에 존재하는 상관관계를 인지과부하와 결부시켜 설명하였습니다.
+        - “Gaming detection using touch interactions” 석사 학위 논문
+            - 요약: 교육용 게임에서 발생할 수 있는 현상인 “시스템 게이밍” 행동 여부를 판별할 수 있는 데이터를 구축하고, 기계학습 모델을 구현하는 연구입니다. "시스템 게이밍"이란, 성실하게 게임에 임하지 않고 시스템의 특성을 이용해 요령껏 레벨을 클리어하는 행동을 의미합니다. 이런 행동을 detect하기 위해, 본 연구에서는 화면 상에서 어떻게 드래그 & 드롭했는지를 묘사하는 touch behavior 특성을 추출하였으며, 이 특성을 기계학습 알고리즘에 학습시켜서 "시스템 게이밍"여부를 예측할 수 있는 모델을 구현하였습니다.
 
 - **인터넷중독 유형분석 및 원인분석 모델 개발 프로젝트**:(2018.9 - 2019.9)
     - 과제 개요 및 목표: 청소년들의 개인적, 사회적, 가정적 요인 데이터를 수집하여 그들의 인터넷 과사용 유형을 분류하고 그 원인을 통한 유형을 분류하는 기계학습 모델을 구현하는 프로젝트
