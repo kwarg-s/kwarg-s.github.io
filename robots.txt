@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: http://floating218.github.io/sitemap.xml
